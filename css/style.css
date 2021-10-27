@@ -1,0 +1,24 @@
+.img-app{
+    border-radius: 10%;
+}
+
+.app-card{
+    width: 12rem; 
+    background-color: #333;
+    color: rgba(241, 241, 241, 0.788);
+}
+
+/* googleplay btn*/
+.mdi-20px {
+    font-size: 1em;
+}
+
+.container {
+    margin-top: 150px
+}
+
+.disabled{
+    color:#fff !important;
+    /*background-color: rgb(9, 172, 184) !important;*/
+    background-color:#007bff !important
+}
