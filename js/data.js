@@ -325,7 +325,6 @@ const ___database = (()=>{
     $.getJSON('https://raw.githubusercontent.com/androidrun/androidrun-data/main/data.json',
         function(data){
             console.log("Success!");
-            console.log(data);
             _data = data;
             init(_data);
         })
