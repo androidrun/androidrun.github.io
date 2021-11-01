@@ -41,7 +41,7 @@ const ___database = (()=>{
 
                 let app =_data.app[i];
         
-                let appCOL_HTML=`<div class="col-xs-3 m-1 app-col"><div class="card app-card"><img class="card-img-top img-app" src="https://raw.githubusercontent.com/androidrun/androidrun-img/main/${app.id}.png" alt="${app.name}"><div class="card-body" style="text-align: center;"><h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="${app.name}">${truncate(app.name, 12)}</h5><p class="card-text">Version: ${truncate(app.desc.v, 12)}</br>Mod: ${app.desc.m}</p><a href="https://bit.ly/androidrun-${app.id.replaceAll('.','-')}" class="btn btn-primary btn-download mr-2" data-toggle="tooltip" data-placement="bottom" title="Download"><i class="fa fa-download btn-icon-prepend mdi-20px"></i></a><a href="https://play.google.com/store/apps/details?id=${app.id}" class="btn btn-success btn-gplay mr-2" data-toggle="tooltip" data-placement="bottom" title="Go to GooglePlay"><i class="fa fa-android btn-icon-prepend mdi-20px"></i></a><a href="${encodeURI('/app.html?id='+app.id+'&v='+app.desc.v+'&m='+app.desc.m+'&n='+app.name)}" class="btn btn-secondary btn-share mr-2" data-toggle="tooltip" data-placement="bottom" title="Share"><i class="fa fa-share btn-icon-prepend mdi-20px"></i></a></div></div></div>`;
+                let appCOL_HTML=`<div class="col-xs-2 col-lg-auto app-col p-1"><div class="card app-card mx-auto" style="padding:0"><img class="card-img-top img-app" src="https://raw.githubusercontent.com/androidrun/androidrun-img/main/${app.id}.png" alt="${app.name}"><div class="card-body" style="text-align: center;"><h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="${app.name}">${truncate(app.name, 12)}</h5><p class="card-text">Version: ${truncate(app.desc.v, 12)}</br>Mod: ${app.desc.m}</p><a href="https://bit.ly/androidrun-${app.id.replaceAll('.','-')}" class="btn btn-primary btn-download mr-2" data-toggle="tooltip" data-placement="bottom" title="Download"><i class="fa fa-download btn-icon-prepend mdi-20px"></i></a><a href="https://play.google.com/store/apps/details?id=${app.id}" class="btn btn-success btn-gplay mr-2" data-toggle="tooltip" data-placement="bottom" title="Go to GooglePlay"><i class="fa fa-android btn-icon-prepend mdi-20px"></i></a><a href="${encodeURI('/app.html?id='+app.id+'&v='+app.desc.v+'&m='+app.desc.m+'&n='+app.name)}" class="btn btn-secondary btn-share mr-2" data-toggle="tooltip" data-placement="bottom" title="Share"><i class="fa fa-share btn-icon-prepend mdi-20px"></i></a></div></div></div>`;
 
         
                 let appROW = document.querySelector(DOMStrings.appRow);
@@ -278,6 +278,11 @@ const ___database = (()=>{
 
                 if(querySearch.length > 0){
 
+                    if(document.querySelector('#navbarCollapse').classList.contains('show')){
+                        document.querySelector('#navbarCollapse').classList.remove('collapse', 'show');
+                        document.querySelector('#navbarCollapse').classList.toggle('hidden-collapse');
+                    }
+
                     /* set data */
 
                     const truncate = (input, wide) => input.length > wide ? `${input.substring(0, wide)}...` : input;
@@ -297,7 +302,7 @@ const ___database = (()=>{
                     for(let i = 0; i<=querySearch.length-1; i++){
                                     
                         let app=querySearch[i];
-                        let appCOL_HTML=`<div class="col-xs-3 m-1 app-col"><div class="card app-card"><img class="card-img-top img-app" src="https://raw.githubusercontent.com/androidrun/androidrun-img/main/${app.id}.png" alt="${app.name}"><div class="card-body" style="text-align: center;"><h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="${app.name}">${truncate(app.name, 12)}</h5><p class="card-text">Version: ${truncate(app.desc.v, 12)}</br>Mod: ${app.desc.m}</p><a href="https://bit.ly/androidrun-${app.id.replaceAll('.','-')}" class="btn btn-primary btn-download mr-2" data-toggle="tooltip" data-placement="bottom" title="Download"><i class="fa fa-download btn-icon-prepend mdi-20px"></i></a><a href="https://play.google.com/store/apps/details?id=${app.id}" class="btn btn-success btn-gplay mr-2" data-toggle="tooltip" data-placement="bottom" title="Go to GooglePlay"><i class="fa fa-android btn-icon-prepend mdi-20px"></i></a><a href="${encodeURI('/app.html?id='+app.id+'&v='+app.desc.v+'&m='+app.desc.m+'&n='+app.name)}" class="btn btn-secondary btn-share mr-2" data-toggle="tooltip" data-placement="bottom" title="Share"><i class="fa fa-share btn-icon-prepend mdi-20px"></i></a></div></div></div>`;
+                        let appCOL_HTML=`<div class="col-xs-2 col-lg-auto app-col p-1"><div class="card app-card mx-auto" style="padding:0"><img class="card-img-top img-app" src="https://raw.githubusercontent.com/androidrun/androidrun-img/main/${app.id}.png" alt="${app.name}"><div class="card-body" style="text-align: center;"><h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="${app.name}">${truncate(app.name, 12)}</h5><p class="card-text">Version: ${truncate(app.desc.v, 12)}</br>Mod: ${app.desc.m}</p><a href="https://bit.ly/androidrun-${app.id.replaceAll('.','-')}" class="btn btn-primary btn-download mr-2" data-toggle="tooltip" data-placement="bottom" title="Download"><i class="fa fa-download btn-icon-prepend mdi-20px"></i></a><a href="https://play.google.com/store/apps/details?id=${app.id}" class="btn btn-success btn-gplay mr-2" data-toggle="tooltip" data-placement="bottom" title="Go to GooglePlay"><i class="fa fa-android btn-icon-prepend mdi-20px"></i></a><a href="${encodeURI('/app.html?id='+app.id+'&v='+app.desc.v+'&m='+app.desc.m+'&n='+app.name)}" class="btn btn-secondary btn-share mr-2" data-toggle="tooltip" data-placement="bottom" title="Share"><i class="fa fa-share btn-icon-prepend mdi-20px"></i></a></div></div></div>`;
 
                         appROW.insertAdjacentHTML('beforebegin', appCOL_HTML);
 
@@ -320,6 +325,13 @@ const ___database = (()=>{
         });
 
     };
+
+    document.querySelector('.navbar-toggler-icon').addEventListener('click', event =>{
+        if(document.querySelector('#navbarCollapse').classList.contains('show')){
+            document.querySelector('#navbarCollapse').classList.remove('collapse', 'show');
+            document.querySelector('#navbarCollapse').classList.toggle('hidden-collapse');
+        }
+    });
 
     /* get data */
     $.getJSON('https://raw.githubusercontent.com/androidrun/androidrun-data/main/data.json',

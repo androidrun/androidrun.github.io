@@ -8,8 +8,8 @@ const __app = (()=>{
         document.querySelector("link[rel~='icon']").href = `https://raw.githubusercontent.com/androidrun/androidrun-img/main/${app.id}.png`;
 
         let app_HTML = `<div class="row justify-content-md-center mt-5">
-        <div class="col-xs-3">
-          <div class="card app-card" style="width: 20em;">
+        <div class="col-xs-2 col-lg-auto app-col p-1">
+          <div class="card app-card mx-auto" style="padding:0; width:20em">
             <img class="card-img-top img-app" src="https://raw.githubusercontent.com/androidrun/androidrun-img/main/${app.id}.png" alt="${app.n}">
             <div class="card-body" style="text-align: center;">
               <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="${app.n}">${app.n}</h5>
