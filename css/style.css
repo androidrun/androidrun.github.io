@@ -4,7 +4,7 @@
 
 .app-card{
     width: 12rem; 
-    background-color: #333;
+    background-color: #303841;
     color: rgba(241, 241, 241, 0.788);
 }
 
@@ -21,4 +21,8 @@
     color:#fff !important;
     /*background-color: rgb(9, 172, 184) !important;*/
     background-color:#007bff !important
+}
+
+.hidden-collapse {
+    display: none !important;
 }
